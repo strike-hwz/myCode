@@ -1,11 +1,10 @@
 package leetcode;
 
-import java.util.HashMap;
 import java.util.HashSet;
 
 /**
  * @ClassName No0859_1
- * @Description TODO
+ * @Description 参考评论思路来编程解答
  * @Author Ryan(hwz)
  * @Version 1.0.0
  * @Date 2021/11/23 15:44
@@ -20,23 +19,21 @@ public class No0859_1 {
                 if (!checkSame.add(s.charAt(i)))
                     return true;
             }
+            return false;
         }
-        int[] diffIndex = new int[2];
+        int[] diffIndex = new int[3];
         int diffCount = 0;
         for (int i = 0; i < s.length(); i++) {
-            if (diffCount > 1)
-                break;
+            if (diffCount > 2)//有超过两个字符不同，即false
+                return false;
             if (s.charAt(i) != goal.charAt(i)) {
                 diffIndex[diffCount] = i;
                 diffCount++;
             }
         }
-        //交换字符串中两个字符的位置，todo 以下存在substring方法边界问题
-        StringBuilder newS = new StringBuilder(s.substring(0, diffIndex[0]));
-        newS.append(s.charAt(diffIndex[1])).append(s.substring(diffIndex[0]+1, diffIndex[1]));
-        newS.append(s.charAt(diffIndex[0])).append(s.substring(diffIndex[1]+1, s.length()));
-
-        if (newS.toString().equals(goal))
+        //比较交换后的两个字符
+        if (s.charAt(diffIndex[1]) == goal.charAt(diffIndex[0])
+                && s.charAt(diffIndex[0]) == goal.charAt(diffIndex[1]))
             return true;
         return false;
     }
