@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * @ClassName _Test
  * @Description TODO
@@ -9,14 +11,7 @@ package leetcode;
  */
 public class _Test {
     public static void main(String[] args) {
-        No0237 test = new No0237();
-        ListNode node1 = new ListNode(3);
-        ListNode node2 = new ListNode(6);
-        ListNode node3 = new ListNode(9);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = null;
-        test.deleteNode(node1);
-//        System.out.println(test.deleteNode(node1));
+        No0506 test = new No0506();
+        System.out.println(Arrays.toString(test.findRelativeRanks(new int[]{10, 3, 8, 9, 4})));
     }
 }

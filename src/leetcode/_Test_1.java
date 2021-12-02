@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ClassName _Test_1
  * @Description TODO
@@ -9,8 +12,6 @@ package leetcode;
  */
 public class _Test_1 {
     public static void main(String[] args) {
-        No0407_TODO test = new No0407_TODO();
-        int[][] element  = {{1,4,3,1,3,2},{3,2,1,3,2,4},{2,3,3,2,3,1}};
-        System.out.println(test.trapRainWater(element));
+        List<Integer> test = new ArrayList<Integer>(){{}};
     }
 }

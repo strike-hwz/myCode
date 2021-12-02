@@ -27,5 +27,7 @@ public class Test {
         };
         numList.remove(3);
         System.out.println(numList);
+        StringBuilder wish = new StringBuilder("Ryan, please smile!");
+        System.out.println(wish.deleteCharAt(5));
     }
 }
