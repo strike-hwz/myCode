@@ -11,11 +11,13 @@ public class No0066 {
     public int[] plusOne(int[] digits) {
         int len = digits.length;
         int carry = 0;//进位
+        //计算最后一位加 1 是否进位
         if (digits[len-1]+1 < 10){
             digits[len-1] += 1;
         }else {
             digits[len-1] = digits[len-1] + 1 - 10;
             carry = 1;
+            //向前进位计算
             for (int i = len-2; i >= 0; i--) {
                 if (digits[i] + carry < 10){
                     digits[i] += carry;
@@ -25,7 +27,7 @@ public class No0066 {
                     digits[i] = digits[i] + carry - 10;
                 }
             }
-            if (carry == 1){
+            if (carry == 1){//进位导致数组长度加 1
                 int[] res = new int[len+1];
                 res[0] = carry;
                 System.arraycopy(digits, 0, res, 1, len);
