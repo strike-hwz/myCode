@@ -11,15 +11,16 @@ import org.omg.PortableServer.RequestProcessingPolicy;
  */
 public class No0108 {
     public TreeNode sortedArrayToBST(int[] nums) {
-
-        TreeNode root = new TreeNode(nums[(nums.length-1)/2]);
-        getRoot(0, nums.length-1, nums, root);
-        return root;
+        return getUnit(0, nums.length-1, nums, new TreeNode());
     }
-    public void getRoot(int start, int end, int[] nums, TreeNode root){
+    public TreeNode getUnit(int start, int end, int[] nums, TreeNode root){
         if (start > end){
-            return;
+            return null;
         }
-
+        int mid = (start + end) / 2;
+        root = new TreeNode(nums[mid]);
+        root.left = getUnit(start, mid-1, nums, root.left);
+        root.right = getUnit(mid+1, end, nums, root.right);
+        return root;
     }
 }
