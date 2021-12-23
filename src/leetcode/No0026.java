@@ -9,8 +9,9 @@ package leetcode;
  */
 public class No0026 {
     public int removeDuplicates(int[] nums) {
-        if (nums.length < 1)
+        if (nums.length < 1) {
             return 0;
+        }
         int currIndex = 0;
         for (int i = 1; i < nums.length; i++) {
             if (nums[i] > nums[currIndex]) {

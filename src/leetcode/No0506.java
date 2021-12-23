@@ -17,8 +17,8 @@ public class No0506 {
         String[] res = new String[len];
         for (int i = 0; i < len; i++) {
             for (int j = 0; j < len; j++) {
-                if (score[i] == rank[j])
-                    switch (len-j){
+                if (score[i] == rank[j]) {
+                    switch (len - j) {
                         case 1:
                             res[i] = "Gold Medal";
                             break;
@@ -29,9 +29,10 @@ public class No0506 {
                             res[i] = "Bronze Medal";
                             break;
                         default:
-                            res[i] = String.valueOf(len-j);
+                            res[i] = String.valueOf(len - j);
                             break;
                     }
+                }
             }
         }
         return res;

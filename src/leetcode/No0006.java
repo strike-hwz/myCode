@@ -19,7 +19,8 @@ public class No0006 {
         for (int i = 0; i < numRows; i++) {
             if (i < numRows-1){
                 //把第一列（除了最后一个）加入结果中
-                res.append(s.charAt(i));}
+                res.append(s.charAt(i));
+            }
             for (int j = (2*numRows-2-i); j < len; j += (2*numRows-2)) {
                 if (i==0 || i==numRows-1){
                     res.append(s.charAt(j));}

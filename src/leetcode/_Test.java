@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 public class _Test {
     public static void main(String[] args) {
-        No0506 test = new No0506();
-        System.out.println(Arrays.toString(test.findRelativeRanks(new int[]{10, 3, 8, 9, 4})));
+        No0121 test = new No0121();
+        System.out.println(test.maxProfit(new int[]{7,1,5,3,6,4}));
     }
 }
